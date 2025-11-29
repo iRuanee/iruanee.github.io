@@ -1,11 +1,351 @@
 <!DOCTYPE html>
-<html>
-  <head>
-	<meta name="viewport" content="width=device-width">
-  	<title>Happy Birthday!</title>
-  </head>
-	<video width="100%" height="auto" controls autoplay muted loop playsinline webkit-playsinline>
-  		<source src="https://iruanee.github.io/birthday_giftcards/2025/alexander/sticker_gandonio.webm" type="video/webm">
-  		Your browser does not support the video tag.
-	</video>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Happy birthday!</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 15px;
+            overflow-x: hidden;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+            width: 100%;
+            max-width: 800px;
+        }
+        
+        h1 {
+            font-size: 1.8rem;
+            margin-bottom: 8px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .subtitle {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+        
+        .video-container {
+            width: 100%;
+            max-width: 800px;
+            background-color: #000;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            margin-bottom: 20px;
+            position: relative;
+            aspect-ratio: 16/9;
+        }
+        
+        video {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: cover;
+        }
+        
+        .mobile-controls {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            max-width: 800px;
+            margin-top: 15px;
+            gap: 10px;
+        }
+        
+        .mobile-controls button {
+            flex: 1;
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            border-radius: 12px;
+            color: white;
+            padding: 14px 10px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+            backdrop-filter: blur(5px);
+            min-height: 70px;
+            justify-content: center;
+        }
+        
+        .mobile-controls button:active {
+            background: rgba(255, 255, 255, 0.3);
+            transform: scale(0.98);
+        }
+        
+        .mobile-controls i {
+            font-size: 1.4rem;
+        }
+        
+        .mobile-controls span {
+            font-size: 0.9rem;
+        }
+        
+        .instructions {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 20px;
+            max-width: 800px;
+            margin-top: 20px;
+            backdrop-filter: blur(5px);
+        }
+        
+        .instructions h2 {
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+        
+        .instructions ul {
+            padding-left: 20px;
+        }
+        
+        .instructions li {
+            margin-bottom: 10px;
+            line-height: 1.5;
+        }
+        
+        .mobile-tips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        .tip {
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 10px;
+            padding: 12px;
+            flex: 1;
+            min-width: 140px;
+            text-align: center;
+        }
+        
+        .tip i {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+            display: block;
+        }
+        
+        footer {
+            margin-top: 30px;
+            text-align: center;
+            opacity: 0.7;
+            font-size: 0.9rem;
+            padding: 10px;
+        }
+        
+        /* Landscape orientation adjustments */
+        @media (orientation: landscape) and (max-height: 500px) {
+            body {
+                padding: 10px;
+            }
+            
+            header {
+                margin-bottom: 10px;
+            }
+            
+            h1 {
+                font-size: 1.5rem;
+            }
+            
+            .video-container {
+                margin-bottom: 10px;
+            }
+            
+            .mobile-controls {
+                margin-top: 10px;
+            }
+            
+            .mobile-controls button {
+                padding: 10px 5px;
+                min-height: 60px;
+            }
+        }
+        
+        /* Dark mode support */
+        @media (prefers-color-scheme: dark) {
+            body {
+                background: linear-gradient(135deg, #0d1b4c, #8a1919, #d89c22);
+            }
+        }
+        
+        /* iOS Safari specific fixes */
+        @supports (-webkit-touch-callout: none) {
+            .video-container {
+                -webkit-mask-image: -webkit-radial-gradient(white, black);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Алексанечка, пупсик, с днем рождения</h1>
+		<h3>Сегодня тот самый день, как 28 лет назад... тебя купили у цыган &#129401;</h3>
+		<br>
+		<h6>*за баунти и баночку ред булла</h6>
+		<br>
+		<br>
+		<h6>P.S.: <a style='color: #1D71B8; text-decoration: underline;' href='https://egorkreed.com/concerts/'><s>Купи билет Вике на Егора Крида</s></a></h6>
+    </header>
+    
+    <div class="video-container">
+        <video id="videoPlayer" controls playsinline webkit-playsinline autoplay muted loop>
+            <source src="https://iruanee.github.io/birthday_giftcards/2025/alexander/sticker_gandonio.webm" type="video/webm">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+    
+    <div class="mobile-controls">
+        <button id="playBtn">
+            <i class="fas fa-play"></i>
+            <span>Play</span>
+        </button>
+        <button id="pauseBtn">
+            <i class="fas fa-pause"></i>
+            <span>Pause</span>
+        </button>
+        <button id="fullscreenBtn">
+            <i class="fas fa-expand"></i>
+            <span>Full Screen</span>
+        </button>
+        <button id="muteBtn">
+            <i class="fas fa-volume-up"></i>
+            <span>Mute</span>
+        </button>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const video = document.getElementById('videoPlayer');
+            const playBtn = document.getElementById('playBtn');
+            const pauseBtn = document.getElementById('pauseBtn');
+            const fullscreenBtn = document.getElementById('fullscreenBtn');
+            const muteBtn = document.getElementById('muteBtn');
+            
+            // Play button functionality
+            playBtn.addEventListener('click', function() {
+                video.play();
+                updatePlayButton();
+            });
+            
+            // Pause button functionality
+            pauseBtn.addEventListener('click', function() {
+                video.pause();
+                updatePlayButton();
+            });
+            
+            // Fullscreen button functionality
+            fullscreenBtn.addEventListener('click', function() {
+                if (video.requestFullscreen) {
+                    video.requestFullscreen();
+                } else if (video.webkitRequestFullscreen) { // Safari
+                    video.webkitRequestFullscreen();
+                } else if (video.mozRequestFullScreen) { // Firefox
+                    video.mozRequestFullScreen();
+                } else if (video.msRequestFullscreen) { // IE/Edge
+                    video.msRequestFullscreen();
+                }
+            });
+            
+            // Mute button functionality
+            muteBtn.addEventListener('click', function() {
+                video.muted = !video.muted;
+                updateMuteButton();
+            });
+            
+            // Double tap to play/pause
+            let lastTap = 0;
+            video.addEventListener('touchend', function(event) {
+                const currentTime = new Date().getTime();
+                const tapLength = currentTime - lastTap;
+                if (tapLength < 500 && tapLength > 0) {
+                    // Double tap detected
+                    if (video.paused) {
+                        video.play();
+                    } else {
+                        video.pause();
+                    }
+                    updatePlayButton();
+                    event.preventDefault();
+                }
+                lastTap = currentTime;
+            });
+            
+            // Update play button based on video state
+            function updatePlayButton() {
+                if (video.paused) {
+                    playBtn.innerHTML = '<i class="fas fa-play"></i><span>Play</span>';
+                } else {
+                    playBtn.innerHTML = '<i class="fas fa-pause"></i><span>Pause</span>';
+                }
+            }
+            
+            // Update mute button based on video state
+            function updateMuteButton() {
+                if (video.muted) {
+                    muteBtn.innerHTML = '<i class="fas fa-volume-mute"></i><span>Unmute</span>';
+                } else {
+                    muteBtn.innerHTML = '<i class="fas fa-volume-up"></i><span>Mute</span>';
+                }
+            }
+            
+            // Handle orientation changes
+            window.addEventListener('orientationchange', function() {
+                // Small delay to ensure orientation has changed
+                setTimeout(function() {
+                    // Adjust UI if needed for landscape/portrait
+                    if (window.orientation === 90 || window.orientation === -90) {
+                        document.body.style.padding = '5px';
+                    } else {
+                        document.body.style.padding = '15px';
+                    }
+                }, 300);
+            });
+            
+            // Prevent accidental zooming on double-tap
+            document.addEventListener('touchstart', function(event) {
+                if (event.touches.length > 1) {
+                    event.preventDefault();
+                }
+            });
+            
+            let lastTouchEnd = 0;
+            document.addEventListener('touchend', function(event) {
+                const now = (new Date()).getTime();
+                if (now - lastTouchEnd <= 300) {
+                    event.preventDefault();
+                }
+                lastTouchEnd = now;
+            }, false);
+            
+            // Initialize button states
+            updatePlayButton();
+            updateMuteButton();
+        });
+    </script>
+</body>
 </html>
