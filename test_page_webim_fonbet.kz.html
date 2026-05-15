@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Webim fonbet.kz</title>
+</head>
+<body>
+  <div>
+    <p style="color: blue; text-decoration: none; cursor: pointer;" onmouseover="this.style.textDecoration='underline';" onmouseout="this.style.textDecoration='none';">Тестовая страница Webim fonbet.kz</p>
+	<form action="https://iruanee.github.io/">
+   		<p><button>Назад</button>
+  </form>
+
+
+
+
+
+
+<!-- webim button generation date: 2026-05-15 version: 10.8.53 -->
+<a class="webim_button" href="#" rel="webim">
+    <img src="https://ccep.webim.ru/button" border="0"/>
+</a>
+<script type="text/javascript">
+    webim = {
+        accountName: "ccep",
+        domain: "ccep.webim.ru",
+        location: "fonbet_kz",
+        fallbackDomains: [],
+    };
+
+    (function () {
+        const domains = [webim.domain, ...webim.fallbackDomains];
+        let currentDomain;
+        let buttonCode;
+        domains.reduce(function(prevFetchPromise, domain) {
+            return prevFetchPromise
+                .then(function() {
+                    if (!buttonCode) {
+                        return fetch("https://" + domain + "/js/button.js")
+                            .then(function(result) {return result.text()})
+                            .then(function(code) {
+                                buttonCode = code;
+                                currentDomain = domain;
+                            });
+                    }
+                })
+                .catch(function() {});
+        }, Promise.resolve()).then(function() {
+            webim.domain = currentDomain;
+            const s = document.createElement("script");
+            s.innerHTML = buttonCode;
+            s.type = "text/javascript";
+            document.getElementsByTagName("head")[0].appendChild(s);
+        });
+    })();
+</script>
+<!-- /webim button -->
+</body>
+
+</html>
